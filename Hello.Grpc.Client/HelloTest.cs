@@ -32,7 +32,7 @@ namespace Hello.Grpc.Client
             }
             System.Console.WriteLine($"GetHelloInfo End");
         }
-        public async void GetHelloInfoAsync()
+        public async Task GetHelloInfoAsync()
         {
             System.Console.WriteLine($"GetHelloInfoAsync Start");
             string url = "http://localhost:50051";

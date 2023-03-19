@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf;
+using Grpc.Core;
 using Hello.Grpc.Server;
 
 namespace Hello.Grpc.Server.Services
@@ -14,9 +15,11 @@ namespace Hello.Grpc.Server.Services
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
             logger.LogInformation(request.Name);
+
             var reply = new HelloReply();
             reply.Message = $"Hello {request.Name}!";
             return Task.FromResult(reply);
+            //throw new RpcException(new Status(StatusCode.Unimplemented, "test error"));
         }
     }
 }

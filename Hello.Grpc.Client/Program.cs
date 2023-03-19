@@ -7,4 +7,4 @@ using Microsoft.Extensions.Logging.Console;
 
 var hello = new HelloTest();
 hello.GetHelloInfo();
-hello.GetHelloInfoAsync();
+await hello.GetHelloInfoAsync();
